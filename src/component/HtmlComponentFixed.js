@@ -8,9 +8,9 @@ let user = {
 };
 const pi = 3.14;
 
-const htmlComponentFixed = () => (
+const HtmlComponentFixed = () => (
     <div>
-        <h1>name and surname</h1>
+        <h1>Mariusz Szmer</h1>
         <p style={{backgroundColor:"red"}} className="user">oko</p>
         <p>pi = {pi}</p>
 
@@ -27,4 +27,4 @@ const htmlComponentFixed = () => (
         <p><span>koment</span></p>
     </div>
 );
-export default htmlComponentFixed()
+export default HtmlComponentFixed;
