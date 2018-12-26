@@ -6,9 +6,9 @@ class App extends React.Component {
 
     state = {counter: 0};
 
-    incrementCounter = () => {
+    incrementCounter = (incrementValue) => {
         this.setState((prevState) => ({
-            counter: prevState.counter + 1
+            counter: prevState.counter + incrementValue
         }));
     };
 
@@ -17,7 +17,10 @@ class App extends React.Component {
 
             <div>
                 <p>React App Demo.</p>
-                <Button onClickFunction={this.incrementCounter}/>
+                <Button incrementValue={1} onClickFunction={this.incrementCounter}/>
+                <Button incrementValue={3} onClickFunction={this.incrementCounter}/>
+                <Button incrementValue={5} onClickFunction={this.incrementCounter}/>
+                <Button incrementValue={9} onClickFunction={this.incrementCounter}/>
                 <Result counter={this.state.counter}/>
             </div>
         );
