@@ -1,15 +1,11 @@
 import React from "react";
-import Button from "./component/Button";
-import Result from "./component/Result";
+import CardList from "./component/CardList";
+import Form from "./component/Form";
+
 
 class App extends React.Component {
-
-    state = {counter: 0};
-
-    incrementCounter = (incrementValue) => {
-        this.setState((prevState) => ({
-            counter: prevState.counter + incrementValue
-        }));
+    state = {
+        cards: []
     };
 
     render() {
@@ -17,11 +13,8 @@ class App extends React.Component {
 
             <div>
                 <p>React App Demo.</p>
-                <Button incrementValue={1} onClickFunction={this.incrementCounter}/>
-                <Button incrementValue={3} onClickFunction={this.incrementCounter}/>
-                <Button incrementValue={5} onClickFunction={this.incrementCounter}/>
-                <Button incrementValue={9} onClickFunction={this.incrementCounter}/>
-                <Result counter={this.state.counter}/>
+                <Form onSubmit={this.addNewCard}/>
+                <CardList cards={this.state.cards}/>
             </div>
         );
     }
